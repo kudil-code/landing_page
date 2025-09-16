@@ -1,4 +1,8 @@
+# Landing Page for Tender ID
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+A modern landing page application built with Next.js, featuring authentication system, contact forms, and responsive design.
 
 ## Getting Started
 
