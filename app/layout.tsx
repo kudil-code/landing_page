@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NODE_ENV === 'production' ? 'https://tenderinformation.id' : 'http://localhost:3000'),
   title: "TenderInformation ID - 200+ Informasi Tender Setiap Hari",
   description: "Platform terlengkap untuk informasi tender konstruksi, pengadaan barang, dan elektrikal di Indonesia. Dapatkan 200+ tender baru setiap hari dari pemerintah, BUMN, dan swasta.",
   keywords: "informasi tender, tender konstruksi, pengadaan pemerintah, tender BUMN, peluang tender, tender Indonesia, pengadaan barang, tender elektrikal",
@@ -84,7 +85,7 @@ export default function RootLayout({
   return (
     <html lang="id">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={${geistSans.variable}  antialiased}
       >
         <Script
           id="structured-data"
