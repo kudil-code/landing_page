@@ -49,5 +49,66 @@ export interface ContactInfo {
   action: string;
 }
 
+// FAQ type
+export interface FAQ {
+  question: string;
+  answer: string;
+}
+
+// Feature type
+export interface Feature {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+// Hero data types
+export interface TenderExample {
+  title: string;
+  value: string;
+  type: string;
+  deadline: string;
+}
+
+export interface HeroStats {
+  daily: string;
+  database: string;
+  update: string;
+}
+
+// Footer types
+export interface FooterLink {
+  name: string;
+  href: string;
+}
+
+export interface FooterLinks {
+  company: FooterLink[];
+  services: FooterLink[];
+  support: FooterLink[];
+  legal: FooterLink[];
+}
+
+// Blog types
+export interface BlogPost {
+  id: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  author: string;
+  publishedAt: string;
+  readTime: string;
+  category: string;
+  tags: string[];
+  image: string;
+  featured: boolean;
+}
+
+export interface BlogCategory {
+  name: string;
+  slug: string;
+  count: number;
+}
+
 
 

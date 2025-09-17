@@ -6,43 +6,14 @@ import {
   MapPin,
   ArrowUp
 } from 'lucide-react';
+import { footerContactInfo } from '@/data/contact';
+import { footerLinks } from '@/data/footer';
 
 export default function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const footerLinks = {
-    company: [
-      { name: 'Tentang Kami', href: '#about' },
-      { name: 'Tim Kami', href: '#team' },
-      { name: 'Karir', href: '#careers' },
-      { name: 'Blog', href: '#blog' },
-      { name: 'Press Kit', href: '#press' }
-    ],
-    services: [
-      { name: 'Tender Konstruksi', href: '#construction' },
-      { name: 'Pengadaan Barang', href: '#procurement' },
-      { name: 'Tender Elektrikal', href: '#electrical' },
-      { name: 'Analisis Tender', href: '#analysis' },
-      { name: 'Konsultasi', href: '#consultation' }
-    ],
-    support: [
-      { name: 'Pusat Bantuan', href: '#help' },
-      { name: 'FAQ', href: '#faq' },
-      { name: 'Kontak', href: '#contact' },
-      { name: 'Login', href: '/login' },
-      { name: 'Status Layanan', href: '#status' },
-      { name: 'API Documentation', href: '#api' }
-    ],
-    legal: [
-      { name: 'Syarat & Ketentuan', href: '#terms' },
-      { name: 'Kebijakan Privasi', href: '#privacy' },
-      { name: 'Kebijakan Cookie', href: '#cookies' },
-      { name: 'Disclaimer', href: '#disclaimer' },
-      { name: 'GDPR', href: '#gdpr' }
-    ]
-  };
 
 
   return (
@@ -70,15 +41,15 @@ export default function Footer() {
             <div className="space-y-3 text-sm">
               <div className="flex items-center text-gray-300">
                 <Phone className="h-4 w-4 mr-3 text-[#4A6FA5]" />
-                <span>+62 812-3456-7890</span>
+                <span>{footerContactInfo.phone}</span>
               </div>
               <div className="flex items-center text-gray-300">
                 <Mail className="h-4 w-4 mr-3 text-[#4A6FA5]" />
-                <span>info@tenderinformation.id</span>
+                <span>{footerContactInfo.email}</span>
               </div>
               <div className="flex items-center text-gray-300">
                 <MapPin className="h-4 w-4 mr-3 text-[#4A6FA5]" />
-                <span>Jl. Sudirman No. 123, Jakarta Pusat</span>
+                <span>{footerContactInfo.address}</span>
               </div>
             </div>
           </div>

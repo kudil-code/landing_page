@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Clock, Send, MessageCircle, CheckCircle, AlertCircle } from 'lucide-react';
+import { Phone, Send, MessageCircle, CheckCircle, AlertCircle } from 'lucide-react';
+import { contactInfo, industries } from '@/data/contact';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -56,7 +57,7 @@ export default function Contact() {
         setSubmitStatus('error');
         setSubmitMessage(result.error || 'Terjadi kesalahan saat mengirim pesan. Silakan coba lagi.');
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
       setSubmitMessage('Terjadi kesalahan saat mengirim pesan. Silakan coba lagi.');
     } finally {
@@ -64,41 +65,6 @@ export default function Contact() {
     }
   };
 
-  const contactInfo = [
-    {
-      icon: Phone,
-      title: "Telepon",
-      details: ["+62 812-3456-7890", "+62 21-1234-5678"],
-      action: "Hubungi Sekarang"
-    },
-    {
-      icon: Mail,
-      title: "Email",
-      details: ["info@tenderinformation.id", "support@tenderinformation.id"],
-      action: "Kirim Email"
-    },
-    {
-      icon: MapPin,
-      title: "Alamat",
-      details: ["Jl. Sudirman No. 123", "Jakarta Pusat 10270", "Indonesia"],
-      action: "Lihat Peta"
-    },
-    {
-      icon: Clock,
-      title: "Jam Operasional",
-      details: ["Senin - Jumat: 08:00 - 17:00", "Sabtu: 09:00 - 15:00", "Support 24/7 via WhatsApp"],
-      action: "Chat WhatsApp"
-    }
-  ];
-
-  const industries = [
-    "Konstruksi",
-    "Pengadaan Barang", 
-    "Elektrikal",
-    "IT & Teknologi",
-    "Konsultan",
-    "Lainnya"
-  ];
 
   return (
     <section id="contact" className="py-16 lg:py-24 bg-white">

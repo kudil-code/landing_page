@@ -1,5 +1,11 @@
-import { Phone, Mail, MapPin, Clock } from 'lucide-react';
-import { ContactInfo } from '@/types/content';
+import { Phone, Mail, MapPin, Clock, LucideIcon } from 'lucide-react';
+
+export interface ContactInfo {
+  icon: LucideIcon;
+  title: string;
+  details: string[];
+  action: string;
+}
 
 export const contactInfo: ContactInfo[] = [
   {
@@ -37,5 +43,9 @@ export const industries = [
   "Lainnya"
 ];
 
-
-
+// Footer contact info (simplified version)
+export const footerContactInfo = {
+  phone: "+62 812-3456-7890",
+  email: "info@tenderinformation.id",
+  address: "Jl. Sudirman No. 123, Jakarta Pusat"
+};

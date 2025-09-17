@@ -1,6 +1,7 @@
 'use client';
 
 import { ArrowRight, CheckCircle, TrendingUp } from 'lucide-react';
+import { heroStats, tenderExamples } from '@/data/hero';
 
 export default function Hero() {
   return (
@@ -23,15 +24,15 @@ export default function Hero() {
             {/* Key Stats */}
             <div className="mt-8 grid grid-cols-3 gap-4">
               <div className="text-center">
-                <div className="text-2xl font-bold text-[#4A6FA5]">200+</div>
+                <div className="text-2xl font-bold text-[#4A6FA5]">{heroStats.daily}</div>
                 <div className="text-sm text-gray-600">Tender/Hari</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-[#4A6FA5]">10.000+</div>
+                <div className="text-2xl font-bold text-[#4A6FA5]">{heroStats.database}</div>
                 <div className="text-sm text-gray-600">Database</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-[#4A6FA5]">24/7</div>
+                <div className="text-2xl font-bold text-[#4A6FA5]">{heroStats.update}</div>
                 <div className="text-sm text-gray-600">Update</div>
               </div>
             </div>
@@ -93,26 +94,7 @@ export default function Hero() {
 
                 {/* Tender List Preview */}
                 <div className="space-y-4">
-                  {[
-                    {
-                      title: "Pembangunan Gedung Kantor Pemda Jakarta",
-                      value: "Rp 5.2 Miliar",
-                      type: "Konstruksi",
-                      deadline: "15 Jan 2024"
-                    },
-                    {
-                      title: "Pengadaan Peralatan Komputer Kantor",
-                      value: "Rp 850 Juta",
-                      type: "Pengadaan",
-                      deadline: "20 Jan 2024"
-                    },
-                    {
-                      title: "Instalasi Sistem Elektrikal Gedung",
-                      value: "Rp 2.1 Miliar",
-                      type: "Elektrikal",
-                      deadline: "25 Jan 2024"
-                    }
-                  ].map((tender, index) => (
+                  {tenderExamples.map((tender, index) => (
                     <div key={index} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
                       <div className="flex justify-between items-start mb-2">
                         <h4 className="font-medium text-gray-900 text-sm leading-tight">

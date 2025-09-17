@@ -11,7 +11,7 @@ export default function Header() {
     { name: 'Fitur', href: '#features' },
     { name: 'Harga', href: '#pricing' },
     { name: 'Industri', href: '#industries' },
-    { name: 'Blog', href: '#blog' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Kontak', href: '#contact' },
   ];
 

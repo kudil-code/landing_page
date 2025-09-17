@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -55,42 +56,43 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TenderInformation ID",
+    "description": "Platform terlengkap untuk informasi tender konstruksi, pengadaan barang, dan elektrikal di Indonesia",
+    "url": "https://tenderinformation.id",
+    "logo": "https://tenderinformation.id/logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+62-xxx-xxx-xxxx",
+      "contactType": "customer service",
+      "availableLanguage": "Indonesian"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "ID",
+      "addressRegion": "Indonesia"
+    },
+    "sameAs": [
+      "https://www.instagram.com/tenderinformation.id",
+      "https://www.linkedin.com/company/tenderinformation-id",
+      "https://www.facebook.com/tenderinformation.id"
+    ]
+  };
+
   return (
     <html lang="id">
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "TenderInformation ID",
-              "description": "Platform terlengkap untuk informasi tender konstruksi, pengadaan barang, dan elektrikal di Indonesia",
-              "url": "https://tenderinformation.id",
-              "logo": "https://tenderinformation.id/logo.png",
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+62-xxx-xxx-xxxx",
-                "contactType": "customer service",
-                "availableLanguage": "Indonesian"
-              },
-              "address": {
-                "@type": "PostalAddress",
-                "addressCountry": "ID",
-                "addressRegion": "Indonesia"
-              },
-              "sameAs": [
-                "https://www.instagram.com/tenderinformation.id",
-                "https://www.linkedin.com/company/tenderinformation-id",
-                "https://www.facebook.com/tenderinformation.id"
-              ]
-            })
-          }}
-        />
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Script
+          id="structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData),
+          }}
+        />
         {children}
       </body>
     </html>
