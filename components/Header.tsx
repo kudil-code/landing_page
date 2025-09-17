@@ -12,6 +12,7 @@ export default function Header() {
     { name: 'Harga', href: '#pricing' },
     { name: 'Industri', href: '#industries' },
     { name: 'Blog', href: '/blog' },
+    { name: 'Tenders', href: '/tenders' },
     { name: 'Kontak', href: '#contact' },
   ];
 

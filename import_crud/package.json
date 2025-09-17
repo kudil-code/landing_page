@@ -1,0 +1,48 @@
+{
+  "name": "tender-crud-export",
+  "version": "1.0.0",
+  "description": "Complete CRUD package for Tender Management System with MySQL database integration and HTML content support",
+  "main": "services/index.js",
+  "types": "services/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node examples/basic-crud.ts",
+    "test": "npm run test:basic && npm run test:html && npm run test:import",
+    "test:basic": "ts-node examples/basic-crud.ts",
+    "test:html": "ts-node examples/html-operations.ts",
+    "test:import": "ts-node examples/data-import.ts",
+    "setup:db": "mysql -u root -p < database/schema.sql",
+    "migrate:html": "mysql -u root -p < database/migration_add_html_content.sql"
+  },
+  "keywords": [
+    "crud",
+    "tender",
+    "mysql",
+    "typescript",
+    "html",
+    "database",
+    "api",
+    "lpse"
+  ],
+  "author": "Tender Management System",
+  "license": "MIT",
+  "dependencies": {
+    "mysql2": "^3.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/tender-crud-export.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-org/tender-crud-export/issues"
+  },
+  "homepage": "https://github.com/your-org/tender-crud-export#readme"
+}

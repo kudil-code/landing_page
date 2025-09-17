@@ -1,19 +1,20 @@
 import { notFound } from 'next/navigation';
 import { getPostById, blogPosts } from '@/data/blog';
-import { Calendar, ArrowLeft, Share2, Bookmark, TrendingUp } from 'lucide-react';
+import { Calendar, ArrowLeft, Share2, Bookmark, TrendingUp, User } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
 import { Card } from '@/components/ui/Card';
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = getPostById(params.slug);
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const resolvedParams = await params;
+  const post = getPostById(resolvedParams.slug);
   
   if (!post) {
     notFound();

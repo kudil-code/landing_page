@@ -85,7 +85,7 @@ export default function RootLayout({
   return (
     <html lang="id">
       <body
-        className={${geistSans.variable}  antialiased}
+        className={`${geistSans.variable} antialiased`}
       >
         <Script
           id="structured-data"

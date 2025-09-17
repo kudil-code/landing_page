@@ -34,12 +34,14 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
   
   const classes = cn(baseClasses, variantClasses[variant], sizeClasses[size], className);
   
-  if (asChild && isValidElement(children)) {
-    return cloneElement(children as any, {
-      className: cn((children.props as any).className, classes),
-      ref,
-    } as any);
-  }
+  // Note: asChild functionality removed for simplicity
+  // if (asChild && isValidElement(children)) {
+  //   return cloneElement(children, {
+  //     ...children.props,
+  //     className: cn(children.props.className, classes),
+  //     ref,
+  //   });
+  // }
   
   return (
     <button 
